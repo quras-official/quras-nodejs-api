@@ -1,0 +1,56 @@
+{
+  "docs": {
+    "Getting Started": [
+      "overview",
+      "installation"
+    ],
+    "Guides": [
+      "basic_sendasset",
+      "basic_createwallet",
+      "basic_checkbalance",
+      "basic_sendcoin",
+      "basic_history",
+      "basic_claimgas",
+      "basic_smartcontract",
+      "basic_setsmartcontractenvironment",
+      "basic_smartcontractlimitation"
+    ]
+  },
+  "api": {
+    "Overview": [
+      "api-index"
+    ],
+    "Modules": [
+      "api-wallet",
+      "api-transactions",
+      "api-rpc",
+      "api-sc",
+      "api-api",
+      "api-u",
+      "api-CONST",
+      "api-settings",
+      "api-logging"
+    ]
+  },
+  "whitepaper": {
+    "Introduction": [
+      "whitepaper/wp-introduction"
+    ],
+    "Contents": [
+      "whitepaper/wp-blockchainstructure",
+      "whitepaper/wp-consensusalgorithm",
+      "whitepaper/wp-virtualmachine",
+      "whitepaper/wp-cryptomodules",
+      "whitepaper/wp-jsonrpc"
+    ],
+    "Future Projects": [
+      "whitepaper/wp-futureservices"
+    ],
+    "Reference": [
+      "whitepaper/wp-reference"
+    ]
+  },
+  "changelog": {
+    "Latest": ["changelog-latest"]
+  }
+}
