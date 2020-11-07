@@ -27,7 +27,7 @@
   },
   "name": "quras-js",
   "description": "Javascript libraries for quras wallet.",
-  "version": "1.9.2",
+  "version": "1.9.7",
   "main": "lib/index.js",
   "browser": "lib/browser.js",
   "module": "src/index.js",
@@ -44,7 +44,7 @@
     "js-scrypt": "^0.2.0",
     "loglevel": "^1.6.1",
     "loglevel-plugin-prefix": "^0.8.3",
-    "scrypt-js": "^2.0.3",
+    "scrypt-js": "^3.0.1",
     "secure-random": "^1.1.1",
     "semver": "^5.5.0",
     "wif": "^2.0.6"

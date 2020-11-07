@@ -336,11 +336,21 @@ export const sha256 = (hex) => {
  */
 export class Fixed8 extends BN {
   constructor (input, base = undefined) {
-    var strInput = input.toString()
-    var dotIndex = strInput.indexOf('.')
-    dotIndex = dotIndex === -1 ? strInput.length - 1 : dotIndex
-    input = parseFloat(input).toFixed(strInput.length - dotIndex - 1)
+    if (input.toString().includes('-')) {
+      throw new Error("The value is less than 0.")
+    }
+    
+    if (base === undefined) {
+      var strInput = input.toString()
+      var dotIndex = strInput.indexOf('.')
+      dotIndex = dotIndex === -1 ? strInput.length - 1 : dotIndex
+      input = parseFloat(input).toFixed(strInput.length - dotIndex - 1)
+    }
     super(input, base)
+
+    if (this < 0) {
+      throw new Error("The value is less than 0.")
+    }
   }
 
   toHex () {
@@ -365,7 +375,7 @@ export class Fixed8 extends BN {
   }
 
   /**
-   * Returns a Fixed8 whose value is rounded upwards to the next whole number.
+   * Returns a Fixed8 whose value is rounded upwards to the next whole number.  
    * @return {Fixed8}
    */
   ceil () {

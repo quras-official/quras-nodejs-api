@@ -85,7 +85,8 @@ export const generateMultiSig = (m, publickeys) => {
   if (!(m >= 1 && m <= publickeys.length && publickeys.length <= 16)) throw new Error('Redeem Parameters are incorrect')
   const sb = new ScriptBuilder()
   sb.emitPush(m)
-  var data = publickeys.sort(function (a, b) { return a.slice(2, a.length).localeCompare(b.slice(2, b.length)) })
+  var data = publickeys.slice()
+  data = data.sort(function (a, b) { return a.slice(2, a.length).localeCompare(b.slice(2, b.length)) })
   for (var publickey of data) {
     sb.emitPush(publickey)
   }

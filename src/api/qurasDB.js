@@ -269,7 +269,7 @@ export const deployAsset = (net, assetData) => {
         var name = '[{"lang":"en-US","name":"' + assetData['tokenName'] + '"}]'
         const balance = new Balance(data)
         const sb = generateAsset(int2hex(assetData['tokenType']), name, amount, assetData['precision'], ownerPubKey, adminScriptHash, issuerScriptHash, afee, tfee, tfeeMin, tfeeMax, feeAddressScriptHash)
-        const invocationTx = Transaction.createInvocationTx(balance, null, sb.str, 4990)
+        const invocationTx = Transaction.createInvocationTx(balance, null, sb.str, 5000)
         invocationTx.sign(assetData['priKey'])
         var rpcServer = new RPCClient(net)
         return rpcServer.sendRawTransaction(invocationTx.serialize())

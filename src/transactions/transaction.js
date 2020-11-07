@@ -307,7 +307,7 @@ class Transaction {
    * @return {Transaction}
    */
   static deserialize (hexstring) {
-    const txObj = core.deserializeTransaction(hexstring)
+    var txObj = core.deserializeTransaction(hexstring)
     const exclusiveData = exc.getExclusive[txObj.type](txObj)
     return new Transaction(Object.assign(txObj, exclusiveData))
   }

@@ -1,4 +1,4 @@
-import { num2fixed8, fixed82num, num2VarInt, reverseHex, num2hexstring, str2hexstring } from '../utils'
+import { num2fixed8, fixed82num, num2VarInt, reverseHex, num2hexstring, str2hexstring, hexstring2str } from '../utils'
 import {
   serializeTransactionInput,
   deserializeTransactionInput
@@ -166,10 +166,11 @@ const deserializeMultiSignWalletExclusive = ss => {
     multisig_redeem_script: '',
     validators: []
   }
-  out.multisig_redeem_script = reverseHex(ss.read(32))
-  const validatorLength = ss.readVarInt()
+  out.multisig_redeem_script = ss.read(20)
+  const validatorLength = parseInt(reverseHex(ss.read(4)), 16)
   for (let i = 0; i < validatorLength; i++) {
-    out.validators.push(ss.read(66))
+    ss.read(1)
+    out.validators.push(hexstring2str(ss.read(66)))
   }
   return out
 }

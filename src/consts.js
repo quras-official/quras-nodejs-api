@@ -12,7 +12,7 @@ export const CONTRACTS = {
 export const DEFAULT_RPC = {
   MAIN: 'https://rpc.quras.io',
   TEST: 'http://13.230.62.42:10030',
-  DEV: 'http://13.112.100.149:10030'
+  DEV: 'http://13.250.19.208:10030'
 }
 
 export const DEFAULT_REQ = { jsonrpc: '2.0', method: 'getblockcount', params: [], id: 1234 }
