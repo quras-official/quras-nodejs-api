@@ -200,7 +200,7 @@ const isValidValue = (value) => {
   } else if (value === '') {
     return true
   } else if (value === false) {
-    return true;
+    return true
   }
   return false
 }

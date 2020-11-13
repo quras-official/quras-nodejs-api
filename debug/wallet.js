@@ -33,7 +33,7 @@ var pubKey = '03436a716bb42f8e094b06ba5a4e2112ca5f378a727356d8ec9dcc0aca7b15074f
 var scriptHash = Quras.wallet.getScriptHashFromPublicKey(pubKey);
 var addr = Quras.wallet.getAddressFromScriptHash(scriptHash);
 
-var scriptHash = Quras.wallet.getScriptHashFromAddress('DZ5ZLHNs1opQitAMW9knMDFxw3SZSQhb31');
+var scriptHash = Quras.wallet.getScriptHashFromAddress('DcKcRUqUz3CjSJpE5CwBnudHguGUVqoL6m');
 console.log(scriptHash);
 
 var checkAddr = Quras.wallet.isAddress('DYKBRXP1hk6dZCft7reVkXiTdyRb1DhKxJ');
@@ -48,12 +48,12 @@ const rpcServer = new Quras.rpc.RPCClient(Quras.CONST.QURAS_NETWORK.MAIN);
 const testRpcServer = new Quras.rpc.RPCClient(Quras.CONST.QURAS_NETWORK.TEST);
 const devRpcServer = new Quras.rpc.RPCClient(Quras.CONST.QURAS_NETWORK.DEV);
 
-try {
-    var data = Quras.u.fixed82num("ffffffffffffffff");
-    console.log(data.toString());
-} catch (err) {
-    console.log(err);
-}
+// try {
+//     var data = Quras.u.fixed82num("ffffffffffffffff");
+//     console.log(data.toString());
+// } catch (err) {
+//     console.log(err);
+// }
 
 
 function convertHexToString(hex) {
@@ -62,6 +62,16 @@ function convertHexToString(hex) {
         str += String.fromCharCode(parseInt(hex.substr(i, 2), 16));
     return str;
 }
+
+// var param = [];
+// devRpcServer.invokeFunction('0x84e76e9a0971c410fbb3104c601761f1fa315b6a','deploys',param)
+// .then((data) => {
+//     console.log(data);
+// })
+// .catch((error) => {
+//     console.log(error);
+// });
+
 // for (var i=1; i<4; i++) {
 //     var param = [
 //         {
@@ -88,17 +98,17 @@ function convertHexToString(hex) {
 //     });
 // }
 
-// var params = [
-//     { "type": "ByteArray",
-//       "value": Quras.u.reverseHex("38cbd2622e2f120455c17f02fdbe2ed5be3ed7da") },
-//     { "type": "String",
-//       "value": "https://media.giphy.com/media/Wyt6sLEjKjaFjzybth/giphy.gif" }
-// ]
+var params = [
+    { "type": "ByteArray",
+      "value": Quras.u.reverseHex("a376879a9707bc119e3b0f75f26d6b230d010956") },
+    { "type": "String",
+      "value": "https://media.giphy.com/media/Wyt6sLEjKjaFjzybth/giphy.gif" }
+]
 
-// var functionName = {
-//     "type": "String",
-//     "value": "mint"
-// }
+var functionName = {
+    "type": "String",
+    "value": "mint"
+}
 
 // var pubKey = Quras.wallet.getPublicKeyFromPrivateKey('530ccff5d695e934edf5f180268da169c5dfc01c1b750d359b663542c20a6049');
 // var scriptHash = Quras.wallet.getScriptHashFromPublicKey(pubKey);
@@ -108,13 +118,14 @@ function convertHexToString(hex) {
 
 
 
-/*Quras.api.qurasDB.invokeSmartContract(Quras.CONST.QURAS_NETWORK.TEST,'02a42edc5064c7f5415de400bdfd382dc72515e2c450dad31f45cf2cac58c3dc','cc1321a11784192ab50a6141ff6ad267b858c862',functionName, params, address)
+Quras.api.qurasDB.invokeSmartContract(Quras.CONST.QURAS_NETWORK.DEV,'640e76286f55ceb9614c92519bf00a4914589bfc082c1903b0b75dec4a68042f','84e76e9a0971c410fbb3104c601761f1fa315b6a',functionName, params, 'DcKcRUqUz3CjSJpE5CwBnudHguGUVqoL6m', 1207)
 .then((data) => {
     console.log(data);
 })
 .catch((error) => {
     console.log(error);
-});*/
+});
+
 // var claims = [
 //     {txid: "0x4ec9c0b98d68c8061ca7236efe804107628652234e78b49baf8a993448370f36", vout: 1}
 // ]
@@ -187,7 +198,7 @@ function convertHexToString(hex) {
 //     console.log(error);
 // });
 
-// Quras.api.qurasDB.getBalance(Quras.CONST.QURAS_NETWORK.MAIN, 'Di4GYMXaSh7NiunKjmm9E5XqeB1xAkhgtH')
+// Quras.api.qurasDB.getBalance(Quras.CONST.QURAS_NETWORK.DEV, 'DcKcRUqUz3CjSJpE5CwBnudHguGUVqoL6m')
 // .then((data) => {
 //     console.log(data);
 // })

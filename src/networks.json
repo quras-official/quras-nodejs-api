@@ -54,7 +54,7 @@
       } 
     },
     "ExtraConfiguration": {
-      "qurasDB": "http://13.230.62.42:3001"
+      "qurasDB": "http://13.230.62.42:3000"
     }
   },
   "DevNet": {
@@ -80,7 +80,7 @@
       }
     },
     "ExtraConfiguration": {
-      "qurasDB": "http://13.250.19.208:3001"
+      "qurasDB": "http://13.250.19.208:3000"
     }
   }
 }

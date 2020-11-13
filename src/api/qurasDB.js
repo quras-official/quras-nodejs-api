@@ -453,13 +453,13 @@ export const getBlock = (net, number) => {
     })
 }
 
-export const invokeSmartContract = (net, privkey, scripthash, fucntionName, params, address) => {
+export const invokeSmartContract = (net, privkey, scripthash, fucntionName, params, address, gas) => {
   return getBalance(net, address)
     .then((data) => {
       const hexHash = ab2str(hexstring2ab(reverseHex(scripthash)))
       const sb = generateInvoke(hexHash, fucntionName, params)
       const balance = new Balance(data)
-      const invocationTx = Transaction.createInvocationTx(balance, null, sb.str, 0, null, 0.001)
+      const invocationTx = Transaction.createInvocationTx(balance, null, sb.str, 0, null, gas)
       invocationTx.sign(privkey)
       var rpcServer = new RPCClient(net)
       return rpcServer.sendRawTransaction(invocationTx.serialize())

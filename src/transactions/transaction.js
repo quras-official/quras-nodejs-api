@@ -200,7 +200,7 @@ class Transaction {
       version: TX_VERSION.INVOCATION,
       outputs: intents,
       script: typeof (invoke) === 'string' ? invoke : createScript(invoke),
-      gas: gasCost
+      gas: fees
     }, override)
     balances = new Transaction(txConfig).rebuildBalance(balances)
     const tx = new Transaction(txConfig).calculate(balances, null, fees)

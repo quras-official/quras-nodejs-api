@@ -106,7 +106,8 @@ export function invokeSmartContract(
   scripthash: string, 
   fucntionName: string, 
   params: Array<any>, 
-  address: string
+  address: string,
+  gas: number
 ): Promise<RPCResponse>
 
 export function getAssetInfo(
