@@ -336,9 +336,6 @@ export const sha256 = (hex) => {
  */
 export class Fixed8 extends BN {
   constructor (input, base = undefined) {
-    if (input.toString().includes('-')) {
-      throw new Error('The value is less than 0.')
-    }
     if (base === undefined) {
       var strInput = input.toString()
       var dotIndex = strInput.indexOf('.')
@@ -346,10 +343,6 @@ export class Fixed8 extends BN {
       input = parseFloat(input).toFixed(strInput.length - dotIndex - 1)
     }
     super(input, base)
-
-    if (this < 0) {
-      throw new Error('The value is less than 0.')
-    }
   }
 
   toHex () {
