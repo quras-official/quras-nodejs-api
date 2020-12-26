@@ -203,7 +203,7 @@ class Transaction {
       gas: fees
     }, override)
     balances = new Transaction(txConfig).rebuildBalance(balances)
-    const tx = new Transaction(txConfig).calculate(balances, null, fees)
+    const tx = new Transaction(txConfig).calculate(balances, null)
     log.info(`New InvocationTransaction for ${balances.address}`)
     return tx
   }
